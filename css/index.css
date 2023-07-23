@@ -1,0 +1,114 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0074D9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Login Styles */
+.login {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    /* Menyentuh tepi atas dan bawah layar */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Menggeser posisi secara horizontal */
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Set panjang input agar sama dengan tombol login */
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="submit"],
+.login button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Set margin bawah pada tombol login */
+.login input[type="submit"],
+.login button[type="button"] {
+    margin-bottom: 10px;
+}
+
+.login h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.login input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.login input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.login button[type="button"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #0074D9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
