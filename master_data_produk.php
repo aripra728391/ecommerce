@@ -16,10 +16,10 @@ $conn = connectDB();
 $searchKeyword = "";
 if (isset($_GET['search'])) {
     $searchKeyword = $_GET['search'];
-    $searchQuery = "SELECT * FROM produk WHERE nama_produk LIKE '%$searchKeyword%'";
+    $searchQuery = "SELECT * FROM produk WHERE nama_produk LIKE '%$searchKeyword%' ORDER BY `nama_produk` ASC";
     $result = $conn->query($searchQuery);
 } else {
-    $result = $conn->query("SELECT * FROM produk");
+    $result = $conn->query("SELECT * FROM produk ORDER BY `nama_produk` ASC");
 }
 
 // Tampilkan data produk
@@ -36,14 +36,46 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Master Data Produk</title>
+    <title>Produk</title>
     <link rel="icon" type="image/png" href="logo/logo_icon.png">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
     <link rel="stylesheet" type="text/css" href="css/master_data_produk.css">
 </head>
 <body>
+    <header>
+        <!-- Navbar -->
+        <nav>
+            <div class="container1">
+                <!-- Menu -->
+                
+                <table>
+                    <tr>
+                        <td>
+                            <div class="logo-container">
+                                <!-- Logo -->
+                                <a class="logo" href="dashboard.php"><img src="logo/logo2.png" alt="Logo"></a>
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="menu">
+                                <li><a href="#">Product</a></li>
+                                <li><a href="order.php">Pesanan</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <!-- Logout Button -->
+                            <a class="logout" href="dashboard.php?logout=true">Logout</a>
+                            <!-- <a class="logout" href="logout.php">Logout</a> -->
+                        </td>
+                    </tr>
+                </table>
+                            
+                            
+            </div>
+        </nav>
+    </header>
     <div class="container">
-        <h1>Master Data Produk</h1>
+        <h1>Produk</h1>
 
         <!-- <a href="create_product.php" class="add-product">Tambah Produk</a> -->
         <!-- Form Pencarian -->
@@ -72,7 +104,7 @@ $conn->close();
                 <?php } ?>
             </tbody>
         </table>
-        <a href="dashboard.php">Kembali ke Dashboard</a>
+        <!-- <a href="dashboard.php">Kembali ke Dashboard</a> -->
     </div>
 </body>
 </html>

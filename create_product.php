@@ -13,6 +13,7 @@ if (!isset($_SESSION["username"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $namaProduk = $_POST["nama_produk"];
     $hargaProduk = $_POST["harga_produk"];
+    $deskripsiProduk = $_POST["deskripsi_produk"];
     $gambarProduk = $_FILES["gambar_produk"]["name"];
 
     // Cek apakah file gambar telah diupload
@@ -31,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn = connectDB();
 
             // Insert data produk ke tabel produk
-            $sql = "INSERT INTO produk (nama_produk, harga_produk, gambar_produk) VALUES ('$namaProduk', '$hargaProduk', '$gambarProduk')";
+            $sql = "INSERT INTO produk (nama_produk, harga_produk, gambar_produk, deskripsi_produk) VALUES ('$namaProduk', '$hargaProduk', '$gambarProduk', '$deskripsiProduk')";
             if ($conn->query($sql) === TRUE) {
                 echo "<script>alert('Produk berhasil ditambahkan.');</script>";
             } else {
@@ -62,6 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="nama_produk" required><br><br>
             <label>Harga Produk:</label>
             <input type="text" name="harga_produk" required><br><br>
+            <label>Deskripsi Produk:</label>
+            <textarea name="deskripsi_produk" rows="4" cols="50" required></textarea><br><br>
             <label>Gambar Produk:</label>
             <input type="file" name="gambar_produk" required><br><br>
             <input type="submit" value="Submit">

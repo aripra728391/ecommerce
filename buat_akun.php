@@ -12,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validasi format email
     if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
-        $error = "Format email tidak valid";
+        $error = "Format Username harus dalam bentuk Email";
     } elseif (strlen($username) < 6) {
-        $error = "Panjang email minimal 6 karakter";
+        $error = "Panjang Username minimal 6 karakter";
     }
 
     // Validasi panjang nama
@@ -65,22 +65,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Buat Akun</title>
     <link rel="icon" type="image/png" href="logo/logo_icon.png">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/buat_akun.css">
 </head>
-<body class="buat-akun">
-    <h1>Buat Akun</h1>
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-        <label>Nama Lengkap:</label>
-        <input type="text" name="nama" required><br><br>
-        <label>Username:</label>
-        <input type="text" name="username" required><br><br>
-        <label>Password:</label>
-        <input type="password" name="password" required><br><br>
-        <label>Konfirmasi Password:</label>
-        <input type="password" name="konfirmasi_password" required><br><br>
-        <input type="submit" value="Buat Akun">
-        <a href="index.php"><button type="button">Batal</button></a>
-        <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
-    </form>
+<body>
+    <div class="buat">
+        <!-- <h1>Buat Akun</h1> -->
+        <img src="logo/logo_login.png" alt="Logo" class="logo-image">
+        <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+            <label>Nama Lengkap:</label>
+            <input type="text" name="nama" required><br><br>
+            <label>Username:</label>
+            <input type="text" name="username" required><br><br>
+            <label>Password:</label>
+            <input type="password" name="password" required><br><br>
+            <label>Konfirmasi Password:</label>
+            <input type="password" name="konfirmasi_password" required><br><br>
+            <input type="submit" value="Buat Akun">
+            <br/>
+            <a href="index.php"><button type="button">Batal</button></a>
+            <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
+        </form>
+    </div>
 </body>
 </html>

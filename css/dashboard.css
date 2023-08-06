@@ -8,77 +8,103 @@ body {
 }
 
 
-/* Header Styles */
+/* Header Style */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* background-color: #51daf9; */
+    color: #fff;
+    padding: 0;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
+.container1 {
+    /* display: flex;
+    max-width: 1200px;
+    margin: 0 auto; */
+    /* align-items: center;
+    justify-content: center; */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
 }
+.container1 table{
+    width: 100%;
+    margin-top: 0;
+}
+.container1 table td{
+    /* border: 1px solid #ddd; */
+    text-align: center;
+}
+
+.container1 table td:last-child {
+    text-align: right;
+}
+
+.logo-container {
+    display: inline-block;
+    margin-right: auto; /* Mepet ke kiri */
+}
+
+.logo-container a img {
+    max-height: 50px;
+    vertical-align: middle;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* .menu ul {
+    text-align: center;
+} */
+.menu li {
+    margin-left: 20px;
+    flex: 1; /* Menyamakan lebar antar menu item */
+    /* background-color: #f39c12; */
+    padding: 0 auto;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: block; /*Mengatur menu item sebagai elemen blok*/
+    padding: 0; /* Menambahkan ruang padding agar tautan lebih mudah diklik */
+}
+
+.menu li a:hover {
+    color: #f39c12;
+}
+
+.logout {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    /* margin-left: auto;
+    align-items: right;
+    justify-content: right; */
+}
+
+.logout:hover {
+    background-color: #e67e22;
+}
+
+/* Main Content Styles */
 
 .container {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
-
-.logo-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 40px; /* Atur lebar gambar logo sesuai kebutuhan */
-    height: auto; /* Agar gambar tetap proporsional */
-    margin-right: 10px; /* Atur jarak antara logo dan teks "Dashboard" */
-}
-
-nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-nav ul.menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul.menu li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul.menu li a {
-    color: #333;
-    text-decoration: none;
-}
-
-nav ul.menu li a:hover {
-    color: #4267B2;
-}
-
-nav a.logout {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a.logout:hover {
-    color: #4267B2;
-}
-
-/* Main Content Styles */
 .banner {
     background-color: #f5f5f5;
     padding: 60px 0;
@@ -115,14 +141,14 @@ nav a.logout:hover {
     color: #666;
 }
 
-table {
+.content table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 /* Table header */
-table th {
+.content table th {
     background-color: #f2f2f2;
     border: 1px solid #ddd;
     padding: 10px;
@@ -130,23 +156,23 @@ table th {
 }
 
 /* Table rows */
-table tr {
+.content table tr {
     border-bottom: 1px solid #ddd;
 }
 
 /* Alternate row background color for better readability */
-table tr:nth-child(even) {
+.content table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
 /* Table cells */
-table td {
+.content table td {
     padding: 10px;
     border: 1px solid #ddd;
 }
 
 /* Footer row */
-table tfoot th {
+.content table tfoot th {
     text-align: right;
 }
 /* Hide ID column */

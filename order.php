@@ -93,6 +93,38 @@ if (isset($_GET["remove"])) {
     <link rel="stylesheet" type="text/css" href="css/order.css">
 </head>
 <body>
+    <header>
+        <!-- Navbar -->
+        <nav>
+            <div class="container1">
+                <!-- Menu -->
+                
+                <table>
+                    <tr>
+                        <td>
+                            <div class="logo-container">
+                                <!-- Logo -->
+                                <a class="logo" href="dashboard.php"><img src="logo/logo2.png" alt="Logo"></a>
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="menu">
+                                <li><a href="master_data_produk.php">Product</a></li>
+                                <li><a href="#">Pesanan</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <!-- Logout Button -->
+                            <a class="logout" href="dashboard.php?logout=true">Logout</a>
+                            <!-- <a class="logout" href="logout.php">Logout</a> -->
+                        </td>
+                    </tr>
+                </table>
+                            
+                            
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <h1>Order Produk</h1>
 

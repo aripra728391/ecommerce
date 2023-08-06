@@ -23,7 +23,7 @@ $conn->close();
 
 function getOrder($username) {
     $conn = connectDB();
-    $sql = "SELECT * FROM `order` WHERE username = '$username'";
+    $sql = "SELECT * FROM `order` WHERE username = '$username' ORDER BY `tanggal_order` DESC";
     $result = $conn->query($sql);
     $order = array();
 
@@ -38,11 +38,11 @@ function getOrder($username) {
 }
 $order = getOrder($username);
 // Proses logout
-// if (isset($_GET["logout"])) {
-//     session_destroy();
-//     header("Location: index.php");
-//     exit();
-// }
+if (isset($_GET["logout"])) {
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -57,20 +57,38 @@ $order = getOrder($username);
     <header>
         <!-- Navbar -->
         <nav>
-            <div class="container">
+            <div class="container1">
+                <!-- Menu -->
+                
+                <table>
+                    <tr>
+                        <td>
                             <div class="logo-container">
                                 <!-- Logo -->
-                                <a class="logo" href="#"><img src="logo/logo_header.png" alt="Logo"></a>
+                                <a class="logo" href="#"><img src="logo/logo2.png" alt="Logo"></a>
                             </div>
-                            <!-- Menu -->
+                        </td>
+                        <td>
                             <ul class="menu">
                                 <li><a href="master_data_produk.php">Product</a></li>
                                 <li><a href="order.php">Pesanan</a></li>
-                                <!-- <li><a href="create_product.php">Create Product</a></li> -->
+                                <?php
+                                    if ($username == 'admin') {
+                                ?>
+                                <li><a href="create_product.php">Input Product</a></li>
+                                <?php
+                                    } 
+                                ?>
                             </ul>
+                        </td>
+                        <td>
                             <!-- Logout Button -->
-                            <!-- <a class="logout" href="dashboard.php?logout=true">Logout</a> -->
-                            <a class="logout" href="logout.php">Logout</a>
+                            <a class="logout" href="dashboard.php?logout=true">Logout</a>
+                            <!-- <a class="logout" href="logout.php">Logout</a> -->
+                        </td>
+                    </tr>
+                </table>
+                            
                             
             </div>
         </nav>
@@ -109,7 +127,7 @@ $order = getOrder($username);
                 ?>
                         <tr>
                             <td><?php echo $item["order_id"]; ?></td>
-                            <td><?php echo $item["tanggal_order"]; ?></td>
+                            <td><?php echo date('d-m-Y H:i:s', strtotime($item["tanggal_order"])); ?></td>
                             <td><a href="order_success.php?id=<?php echo $item["order_id"]; ?>"><?php echo $item["order_number"]; ?></a></td>
                             <!-- <td><?php echo $item["order_number"]; ?></td> -->
                             <td>Rp <?php echo number_format($item["total_pembayaran"], 0, ',', '.'); ?></td>
